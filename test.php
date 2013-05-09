@@ -1,9 +1,10 @@
 <?php
 
-require 'src/exq.php';
+require 'exq.php';
 
 $exq = new ExacasterMetrics('API_KEY');
 // Possible agents: fsock, test, wget
+$exq->setTrackingUrl('wwwtrack.exacaster.com/e.php');
 $exq->useTransferAgent('test');
 
 $exq->identify('ss@ll.lt');
@@ -18,6 +19,6 @@ $exq->record('multi-params-again');
 
 $exq->alias('ss', 'ss@ll.lt');
 
-$exq->setTrackingUrl('wwwtrack.exacaster.com/log');
+$exq->setTrackingUrl('wwwtrack2.exacaster.com/e.php');
 $exq->record('multi-params, but different URL');
 ?>
