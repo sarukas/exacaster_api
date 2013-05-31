@@ -8,4 +8,4 @@ Exacaster public API
 2. The logging end-point shall be provided by your Exacaster account manager. 
 
 
-
+See test.php script for an example how to use. 
