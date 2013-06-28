@@ -28,7 +28,7 @@ $exq->identify('ss@ll.lt');
 
 $exq->record('Log in', array( 'someParam' => 'data goes here'));
 
-If you want to first set a lot of events in different code scripts and log with one call, use the "set" method: 
+If you want to first set a lot of event parameters in different code places and log with one call at the end, use the "set" method: 
 
 $exq->set(array('one' => 1, 'two' => 2));
 
