@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exacaster metrics API test</title>
+  </head>
+  <body>
+
+    <script>
+      var _exq = _exq || [];
+      var _exk = _exk || "API_KEY";
+
+      _exq.push(
+        ['setKey', _exk]
+      );
+
+      function _exs(u) {
+        var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script');
+        s.type = 'text/javascript'; s.async = 'async'; s.src = u;
+        f.parentNode.insertBefore(s, f);
+      };
+
+      var trackingScriptUrl = 'exq.min.js';
+      _exs(trackingScriptUrl);
+
+      // Send some commands unidentitied. Should generate a UUID random number.
+      _exq.push(
+        ['record', 'A unidentified event'],
+        ['record', 'uniq-more-test']
+      );
+
+      _exq.push(
+        // Identify the user here. Futher commands must have this as the "_p" parameter.
+        // And should send a 'alias' command too.
+        // ['identify', 'ss@ll.lt'],
+        ['record', 'Log in', { someParam: 'one-two-trečias-brolis-ąčęėįšųž' }],
+        ['record', 'second-event']
+      );
+
+      _exq.push(['set', { one: 1, two: 2 }]);
+
+      _exq.push(['record', 'multi-params']);
+      _exq.push(['record', 'multi-params-again']);
+
+      // "alias" does not send the persisted parameters, as it is a separate command.
+      _exq.push(['alias', 'ss', 'ss@ll.lt']);
+
+      // Change the tracking URL.
+      // In reality this should be the first or the second call, like the setKet method. And should be used only once.
+      _exq.push(['setTrackingUrl', 'wwwtrack.exacaster.com/pleaseTrack?']);
+      _exq.push(['record', 'other tracking URL']);
+    </script>
+  </body>
+</html>
