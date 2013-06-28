@@ -5,7 +5,7 @@ require 'exq.php';
 $exq = new ExacasterMetrics('API_KEY');
 // Possible agents: fsock, test, wget
 $exq->setTrackingUrl('wwwtrack.exacaster.com/e.php');
-$exq->useTransferAgent('test');
+$exq->useTransferAgent('fsock');
 
 $exq->identify('ss@ll.lt');
 
