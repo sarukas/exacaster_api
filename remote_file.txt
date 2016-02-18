@@ -1,1 +1,1 @@
-Plain text result <br/>new line
+This text is taken from remote web site. <br/>new line
