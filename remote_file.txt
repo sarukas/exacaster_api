@@ -1,2 +1,1 @@
-Plain text result
-Second plain text line
+Plain text result <div>some html</div>
