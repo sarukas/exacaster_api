@@ -1,1 +1,1 @@
-Plain text result <div>some html</div>
+Plain text result <br/>new line
